@@ -6,10 +6,12 @@ const storedThoughts = JSON.parse(localStorage.getItem('thoughts')) || [];
 // Populate the list with stored thoughts
 storedThoughts.forEach((thought) => {
   const listItem = document.createElement('li');
-  const thoughtIcon = document.createElement('img');
-  thoughtIcon.src = 'path/to/icon.png';
   const thoughtText = document.createElement('div');
   thoughtText.textContent = thought.text;
+  const timestamp = document.createElement('span');
+  timestamp.textContent = new Date(thought.timestamp).toLocaleString();
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
   const replyList = document.createElement('ul');
   thought.replies.forEach((reply) => {
     const replyItem = document.createElement('li');
@@ -24,11 +26,22 @@ storedThoughts.forEach((thought) => {
   replyButton.textContent = 'Submit';
   replyForm.appendChild(replyInput);
   replyForm.appendChild(replyButton);
-  listItem.appendChild(thoughtIcon);
   listItem.appendChild(thoughtText);
+  listItem.appendChild(timestamp);
+  listItem.appendChild(deleteButton);
   listItem.appendChild(replyList);
   listItem.appendChild(replyForm);
   thoughtsList.appendChild(listItem);
+
+  // Delete thought when delete button is clicked
+  deleteButton.addEventListener('click', function() {
+    const thoughtIndex = storedThoughts.findIndex((t) => t.timestamp === thought.timestamp);
+    if (thoughtIndex !== -1) {
+      storedThoughts.splice(thoughtIndex, 1);
+      localStorage.setItem('thoughts', JSON.stringify(storedThoughts));
+      listItem.remove();
+    }
+  });
 });
 
 // Handle form submission
@@ -39,13 +52,16 @@ submitButton.addEventListener('click', function() {
   }
   const thought = {
     text: thoughtText,
+    timestamp: Date.now(),
     replies: []
   };
   const listItem = document.createElement('li');
-  const thoughtIcon = document.createElement('img');
-  thoughtIcon.src = 'path/to/icon.png';
   const thoughtTextElem = document.createElement('div');
   thoughtTextElem.textContent = thoughtText;
+  const timestamp = document.createElement('span');
+  timestamp.textContent = new Date(thought.timestamp).toLocaleString();
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
   const replyList = document.createElement('ul');
   const replyForm = document.createElement('form');
   const replyInput = document.createElement('input');
@@ -55,8 +71,9 @@ submitButton.addEventListener('click', function() {
   replyButton.textContent = 'Submit';
   replyForm.appendChild(replyInput);
   replyForm.appendChild(replyButton);
-  listItem.appendChild(thoughtIcon);
   listItem.appendChild(thoughtTextElem);
+  listItem.appendChild(timestamp);
+  listItem.appendChild(deleteButton);
   listItem.appendChild(replyList);
   listItem.appendChild(replyForm);
   thoughtsList.appendChild(listItem);
@@ -77,12 +94,3 @@ submitButton.addEventListener('click', function() {
     replyItem.textContent = replyText;
     replyList.appendChild(replyItem);
     replyInput.value = '';
-
-    // Update the corresponding thought's array of replies and save to local storage
-    const thoughtIndex = storedThoughts.findIndex((t) => t.text === thought.text);
-    if (thoughtIndex !== -1) {
-      storedThoughts[thoughtIndex].replies.push(replyText);
-      localStorage.setItem('thoughts', JSON.stringify(storedThoughts));
-    }
-  });
-});
