@@ -1,0 +1,133 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #c7b198;
+    color: #fff;
+    line-height: 1.5;
+}
+
+/* Header */
+header {
+    background-color: #2b2b2b;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #2b2b2b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: 0;
+    color: #e5dcb7;
+    text-shadow: 2px 2px 2px #000;
+}
+
+/* Paragraphs */
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #e5dcb7;
+    text-shadow: 1px 1px 1px #000;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    background-color: #d6c9a7;
+    color: #3d3d3d;
+}
+
+/* Button */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #7b4f4f;
+    color: #e5dcb7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 2px #000;
+}
+
+button:hover {
+    background-color: #bf616a;
+    box-shadow: 4px 4px 4px #000;
+}
+
+/* Thoughts List */
+#thoughts-list {
+    margin-top: 20px;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d6c9a7;
+    color: #3d3d3d;
+}
+
+/* Navigation */
+nav {
+    background-color: #2b2b2b;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: #e5dcb7;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+}
+
+/* Main */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c7b198;
+}
+
+/* Sections */
+section {
+    margin-bottom: 40px;
+}
+
+/* Form Label */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e5dcb7;
+    text-shadow: 1px 
