@@ -9,6 +9,25 @@ html {
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
 }
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+  }
+  
+  .container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+  }
+  
+  h1 {
+	color: #333333;
+  }
+  
+  .about-section p {
+	color: black;
+  }
+  
 a {
 	text-decoration: none;
 }
