@@ -2,7 +2,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #c7b198;
-    color: #fff;
+    color: #000000;
     line-height: 1.5;
 }
 
@@ -131,3 +131,4 @@ form label {
     margin-bottom: 5px;
     color: #e5dcb7;
     text-shadow: 1px 
+}
